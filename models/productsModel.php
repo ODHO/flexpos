@@ -43,15 +43,16 @@ class productsModel{
 	=============================================*/
 	static public function mdlAddProduct($table, $data){
 
-		$stmt = Connection::connect()->prepare("INSERT INTO $table(idCategory, code, description, image, stock, buyingPrice, sellingPrice) VALUES (:idCategory, :code, :description, :image, :stock, :buyingPrice, :sellingPrice)");
+		$stmt = Connection::connect()->prepare("INSERT INTO $table(idCategory, code, description, buyingPrice) VALUES (:idCategory, :code, :description, :buyingPrice)");
+		// $stmt = Connection::connect()->prepare("INSERT INTO $table(idCategory, code, description, image, stock, buyingPrice, sellingPrice) VALUES (:idCategory, :code, :description, :image, :stock, :buyingPrice, :sellingPrice)");
 
 		$stmt->bindParam(":idCategory", $data["idCategory"], PDO::PARAM_INT);
 		$stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
 		$stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
-		$stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
-		$stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
+		// $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
+		// $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
 		$stmt->bindParam(":buyingPrice", $data["buyingPrice"], PDO::PARAM_STR);
-		$stmt->bindParam(":sellingPrice", $data["sellingPrice"], PDO::PARAM_STR);
+		// $stmt->bindParam(":sellingPrice", $data["sellingPrice"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -73,15 +74,15 @@ class productsModel{
 	=============================================*/
 	static public function mdlEditProduct($table, $data){
 
-		$stmt = Connection::connect()->prepare("UPDATE $table SET idCategory = :idCategory, description = :description, image = :image, stock = :stock, buyingPrice = :buyingPrice, sellingPrice = :sellingPrice WHERE code = :code");
+		$stmt = Connection::connect()->prepare("UPDATE $table SET idCategory = :idCategory, description = :description, buyingPrice = :buyingPrice WHERE code = :code");
 
 		$stmt->bindParam(":idCategory", $data["idCategory"], PDO::PARAM_INT);
 		$stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
 		$stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
-		$stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
-		$stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
+		// $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
+		// $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
 		$stmt->bindParam(":buyingPrice", $data["buyingPrice"], PDO::PARAM_STR);
-		$stmt->bindParam(":sellingPrice", $data["sellingPrice"], PDO::PARAM_STR);
+		// $stmt->bindParam(":sellingPrice", $data["sellingPrice"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

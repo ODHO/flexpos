@@ -38,7 +38,7 @@ class productsTable{
 					We bring the image
 					=============================================*/
 					
-					$image = "<img src='".$products[$i]["image"]."' width='40px'>";
+					// $image = "<img src='".$products[$i]["image"]."' width='40px'>";
 
 					/*=============================================
 					We bring the category
@@ -53,19 +53,19 @@ class productsTable{
 					Stock
 					=============================================*/
 				  	
-				  	if($products[$i]["stock"] <= 10){
+				  	// if($products[$i]["stock"] <= 10){
 
-		  				$stock = "<button class='btn btn-danger'>".$products[$i]["stock"]."</button>";
+		  				// $stock = "<button class='btn btn-danger'>".$products[$i]["stock"]."</button>";
 
-		  			}else if($products[$i]["stock"] > 11 && $products[$i]["stock"] <= 15){
+		  			// }else if($products[$i]["stock"] > 11 && $products[$i]["stock"] <= 15){
 
-		  				$stock = "<button class='btn btn-warning'>".$products[$i]["stock"]."</button>";
+		  				// $stock = "<button class='btn btn-warning'>".$products[$i]["stock"]."</button>";
 
-		  			}else{
+		  			// }else{
 
-		  				$stock = "<button class='btn btn-success'>".$products[$i]["stock"]."</button>";
+		  				// $stock = "<button class='btn btn-success'>".$products[$i]["stock"]."</button>";
 
-		  			}
+		  			// }
 
 		  			/*=============================================
 		 	 		ACTION BUTTONS
@@ -79,13 +79,13 @@ class productsTable{
 
 					$jsonData .='[
 						"'.($i+1).'",
-						"'.$image.'",
+						
 						"'.$products[$i]["code"].'",
 						"'.$products[$i]["description"].'",
 						"'.$categories["Category"].'",
-						"'.$stock.'",
+						
 						"$ '.$products[$i]["buyingPrice"].'",
-						"$ '.$products[$i]["sellingPrice"].'",
+						
 						"'.$products[$i]["date"].'",
 						"'.$buttons.'"
 					],';

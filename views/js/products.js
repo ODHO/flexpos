@@ -252,22 +252,22 @@ $(".productsTable tbody").on("click", "button.btnDeleteProduct", function(){
 
 	var idProduct = $(this).attr("idProduct");
 	var code = $(this).attr("code");
-	var image = $(this).attr("image");
+	// var image = $(this).attr("image");
 	
 	swal({
 
-		title: '¿Are you sure you want to delete the product?',
+		title: 'Are you sure you want to delete the service?',
 		text: "¡If you're not sure you can cancel this action!",
 		type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     cancelButtonText: 'Cancel',
-    confirmButtonText: 'Yes, delete product!'
+    confirmButtonText: 'Yes, delete service!'
     }).then(function(result){
       if (result.value) {
 
-      	window.location = "index.php?route=products&idProduct="+idProduct+"&image="+image+"&Code="+code;
+      	window.location = "index.php?route=products&idProduct="+idProduct+"&Code="+code;
 
       }
     })

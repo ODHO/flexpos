@@ -32,6 +32,12 @@ $eventsJSON = json_encode($events);
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
+      headerToolbar: {
+    left: 'prev,next',
+    center: 'title',
+    right: 'timeGridWeek' // user can switch between the two
+  },
+      
       events: <?php echo $eventsJSON; ?> ,
       eventContent: function(info) {
           // Customize the event content
@@ -44,12 +50,16 @@ $eventsJSON = json_encode($events);
     
     });
     calendar.render();
+    // calendar.updateSize();
   });
-
+  
 </script>
 
 <span class=""><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddEvent" data-dismiss="modal">Add Event</button></span>
+
+
     <div id='calendar'></div>
+ 
 
 
 

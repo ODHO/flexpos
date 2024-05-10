@@ -31,7 +31,7 @@ if($_SESSION["profile"] == "Seller"){
 
     <h1>
 
-      Product Management
+      Service Management
 
     </h1>
 
@@ -51,7 +51,7 @@ if($_SESSION["profile"] == "Seller"){
 
       <div class="box-header with-border">
 
-        <button class="btn btn-success" data-toggle="modal" data-target="#addProduct"> <i class="fa fa-plus"></i> Add Product</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#addProduct"> <i class="fa fa-plus"></i> Add Service</button>
 
       </div>
 
@@ -64,13 +64,13 @@ if($_SESSION["profile"] == "Seller"){
            <tr>
              
              <th style="width:10px">#</th>
-             <th>Image</th>
+             <!-- <th>Image</th> -->
              <th>Code</th>
              <th>Description</th>
              <th>Category</th>
-             <th>Stock</th>
-             <th>Buying Price</th>
-             <th>Selling Price</th>
+             <!-- <th>Stock</th> -->
+             <th>Price</th>
+             <!-- <th>Selling Price</th> -->
              <th>Date added</th>
              <th>Actions</th>
 
@@ -111,7 +111,7 @@ if($_SESSION["profile"] == "Seller"){
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Add Product</h4>
+          <h4 class="modal-title">Add Service</h4>
 
         </div>
 
@@ -181,7 +181,7 @@ if($_SESSION["profile"] == "Seller"){
             </div>
 
              <!-- input Stock -->
-            <div class="form-group">
+            <!-- <div class="form-group">
 
               <div class="input-group">
 
@@ -191,7 +191,7 @@ if($_SESSION["profile"] == "Seller"){
 
               </div>
 
-            </div>
+            </div> -->
 
             <!-- INPUT BUYING PRICE -->
             <div class="form-group row">
@@ -202,7 +202,7 @@ if($_SESSION["profile"] == "Seller"){
 
                   <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span> 
 
-                  <input type="number" class="form-control input-lg" id="newBuyingPrice" name="newBuyingPrice" step="any" min="0" placeholder="Buying Price" required>
+                  <input type="number" class="form-control input-lg" id="newBuyingPrice" name="newBuyingPrice" step="any" min="0" placeholder="Price" required>
 
                 </div>
 
@@ -210,7 +210,7 @@ if($_SESSION["profile"] == "Seller"){
 			  <!-- Log on to codeastro.com for more projects! -->
 
               <!-- INPUT SELLING PRICE -->
-              <div class="col-xs-12 col-sm-6">  
+              <!-- <div class="col-xs-12 col-sm-6">  
 
                 <div class="input-group"> 
 
@@ -218,12 +218,12 @@ if($_SESSION["profile"] == "Seller"){
 
                   <input type="number" class="form-control input-lg" id="newSellingPrice" name="newSellingPrice" step="any" min="0" placeholder="Selling Price" required>
 
-                </div> 
+                </div>  -->
 
                 <br>
 
                 <!-- CHECKBOX PERCENTAGE -->
-                <div class="col-xs-6"> 
+                <!-- <div class="col-xs-6"> 
 
                   <div class="form-group">   
 
@@ -237,10 +237,10 @@ if($_SESSION["profile"] == "Seller"){
 
                   </div>
 
-                </div>
+                </div> -->
 
                 <!-- INPUT PERCENTAGE -->
-                <div class="col-xs-6" style="padding:0">
+                <!-- <div class="col-xs-6" style="padding:0">
 
                   <div class="input-group"> 
 
@@ -250,14 +250,14 @@ if($_SESSION["profile"] == "Seller"){
 
                   </div>
 
-                </div>
+                </div> -->
 
               </div>
 
             </div>
 
             <!-- input image -->
-            <div class="form-group">
+            <!-- <div class="form-group">
 
               <div class="panel">Upload image</div>
 
@@ -267,7 +267,7 @@ if($_SESSION["profile"] == "Seller"){
 
               <img src="views/img/products/default/anonymous.png" class="img-thumbnail preview" alt="" width="100px">
 
-            </div> 
+            </div>  -->
 
           </div>
 
@@ -281,7 +281,7 @@ if($_SESSION["profile"] == "Seller"){
 
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
 
-          <button type="submit" class="btn btn-success">Save Product</button>
+          <button type="submit" class="btn btn-success">Save Service</button>
 
         </div>
 
@@ -322,7 +322,7 @@ EDIT PRODUCT
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Edit product</h4>
+          <h4 class="modal-title">Edit Service</h4>
 
         </div>
 
@@ -378,7 +378,7 @@ EDIT PRODUCT
             </div>
 
              <!-- INPUT FOR THE STOCK -->
-             <div class="form-group">
+             <!-- <div class="form-group">
               
               <div class="input-group">
               
@@ -388,7 +388,7 @@ EDIT PRODUCT
 
               </div>
 
-            </div>
+            </div> -->
 
              <!-- INPUT FOR BUYING PRICE -->
              <div class="form-group row">
@@ -406,7 +406,7 @@ EDIT PRODUCT
                 </div><!-- Log on to codeastro.com for more projects! -->
 
                 <!-- INPUT FOR SELLING PRICE -->
-                <div class="col-xs-12 col-sm-6">
+                <!-- <div class="col-xs-12 col-sm-6">
                 
                   <div class="input-group">
                   
@@ -416,10 +416,10 @@ EDIT PRODUCT
 
                   </div>
                 
-                  <br>
+                  <br> -->
 
                   <!-- PERCENTAGE CHECKBOX -->
-                  <div class="col-xs-6">
+                  <!-- <div class="col-xs-6">
                     
                     <div class="form-group">
                       
@@ -433,10 +433,10 @@ EDIT PRODUCT
 
                     </div>
 
-                  </div>
+                  </div> -->
 
                   <!-- INPUT FOR PORCENTAJE -->
-                  <div class="col-xs-6" style="padding:0">
+                  <!-- <div class="col-xs-6" style="padding:0">
                     
                     <div class="input-group">
                       
@@ -446,14 +446,14 @@ EDIT PRODUCT
 
                     </div>
 
-                  </div>
+                  </div> -->
 
                 </div>
 
             </div>
 
             <!-- INPUT TO UPLOAD IMAGE -->
-             <div class="form-group">
+             <!-- <div class="form-group">
               
               <div class="panel">Upload Image</div>
 
@@ -465,7 +465,7 @@ EDIT PRODUCT
 
               <input type="hidden" name="currentImage" id="currentImage">
 
-            </div>
+            </div> -->
 
           </div>
 
