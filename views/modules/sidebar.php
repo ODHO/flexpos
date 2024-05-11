@@ -60,11 +60,11 @@
 
 					<li>
 
-						<a href="products">
+						<a href="services">
 
 							<i class="fa fa-product-hunt"></i>
 
-							<span>Products</span>
+							<span>Services</span>
 
 						</a>
 

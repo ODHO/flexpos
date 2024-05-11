@@ -119,7 +119,7 @@ class controllerProducts{
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "products";
+										window.location = "services";
 
 										}
 									})
@@ -141,7 +141,7 @@ class controllerProducts{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "products";
+							window.location = "services";
 
 							}
 						})
@@ -270,7 +270,7 @@ class controllerProducts{
 							  }).then(function(result){
 										if (result.value) {
 
-										window.location = "products";
+										window.location = "services";
 
 										}
 									})
@@ -292,7 +292,7 @@ class controllerProducts{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "products";
+							window.location = "services";
 
 							}
 						})
@@ -335,7 +335,7 @@ class controllerProducts{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "products";
+								window.location = "services";
 
 								}
 							})

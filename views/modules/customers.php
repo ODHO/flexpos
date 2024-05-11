@@ -66,16 +66,20 @@ if($_SESSION["profile"] == "Special"){
            
            <tr>
              
+             <!-- <th>Address</th> -->
+             <!-- <th>Birthday</th> -->
+             <!-- <th>Total Purchases</th> -->
+             <!-- <th>Last Purchase</th> -->
+             <!-- <th>I.D Doc.</th> -->
              <th style="width:10px">#</th>
              <th>Name</th>
-             <th>I.D Doc.</th>
+             <th>Invoice Id</th>
+             <th>Venue</th>
+             <th>Time</th>
+             <th>Side</th>
              <th>Email</th>
              <th>Contact</th>
-             <th>Address</th>
-             <th>Birthday</th>
-             <th>Total Purchases</th>
-             <th>Last Purchase</th>
-             <th>Last login</th>
+             <!-- <th>Last login</th> -->
              <th>Actions</th>
 
            </tr> 
@@ -93,28 +97,30 @@ if($_SESSION["profile"] == "Special"){
 
             foreach ($Customers as $key => $value) {
               
+              // <td>'.$value["idDocument"].'</td>
+
+              // <td>'.$value["address"].'</td>
+
+              // <td>'.$value["birthdate"].'</td>             
+
+              // <td>'.$value["purchases"].'</td>
+              
+              // <td>'.$value["lastPurchase"].'</td>
+              // <td>'.$value["registerDate"].'</td>
 
               echo '<tr>
 
                       <td>'.($key+1).'</td>
 
                       <td>'.$value["name"].'</td>
-
-                      <td>'.$value["idDocument"].'</td>
-
+                      <td>'.$value["invoice_id"].'</td>
+                      <td>'.$value["venue"].'</td>
+                      <td>'.$value["time"].'</td>
+                      <td>'.$value["side"].'</td>
                       <td>'.$value["email"].'</td>
-
                       <td>'.$value["phone"].'</td>
 
-                      <td>'.$value["address"].'</td>
 
-                      <td>'.$value["birthdate"].'</td>             
-
-                      <td>'.$value["purchases"].'</td>
-
-                      <td>'.$value["lastPurchase"].'</td>
-
-                      <td>'.$value["registerDate"].'</td>
 
                       <td>
 
@@ -191,8 +197,28 @@ MODAL ADD CUSTOMER
 
             <div class="form-group">
               <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-id"></i></span>
+                <input class="form-control input-lg" type="text"  name="invoice_id" placeholder="Write Invoice ID" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input class="form-control input-lg" type="number" min="0" name="newIdDocument" placeholder="Write your ID" required>
+                <input class="form-control input-lg" type="text"  name="venue" placeholder="Write Venue" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input class="form-control input-lg" type="text"  name="time" placeholder="Write Time Shift" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input class="form-control input-lg" type="text"  name="side" placeholder="Write your side eg. Bride, Groom or Both" required>
               </div>
             </div>
 
@@ -201,7 +227,7 @@ MODAL ADD CUSTOMER
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input class="form-control input-lg" type="text" name="newEmail" placeholder="Email" required>
+                <input class="form-control input-lg" type="text" name="email" placeholder="Email" required>
               </div>
             </div>
 
@@ -210,28 +236,29 @@ MODAL ADD CUSTOMER
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                <input class="form-control input-lg" type="text" name="newPhone" placeholder="phone" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input class="form-control input-lg" type="text" name="phone" placeholder="phone" >
               </div>
+              <!-- data-inputmask="'mask':'9999 999-9999'" data-mask required -->
             </div>
 
             <!-- ADDRESS INPUT -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
                 <input class="form-control input-lg" type="text" name="newAddress" placeholder="Address" required>
               </div>
-            </div>
+            </div> -->
 
 
              <!-- BIRTH DATE INPUT -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input class="form-control input-lg" type="text" name="newBirthdate" placeholder="Birth Date" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
               </div>
-            </div>
+            </div> -->
 
           </div>
 
@@ -314,7 +341,40 @@ MODAL EDIT CUSTOMER
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="number" min="0" class="form-control input-lg" name="editIdDocument" id="editIdDocument" required>
+                <input type="text"  class="form-control input-lg" name="editinvoice_id" id="editinvoice_id" required>
+
+              </div>
+
+            </div>
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <input type="text"  class="form-control input-lg" name="editvenue" id="editvenue" required>
+
+              </div>
+
+            </div>
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <input type="text"  class="form-control input-lg" name="edittime" id="edittime" required>
+
+              </div>
+
+            </div>
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <input type="text"  class="form-control input-lg" name="editside" id="editside" required>
 
               </div>
 
@@ -342,7 +402,7 @@ MODAL EDIT CUSTOMER
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editPhone" id="editPhone" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+                <input type="text" class="form-control input-lg" name="editPhone" id="editPhone" data-inputmask="'mask':'9999 999-9999'" data-mask required>
 
               </div>
 
@@ -350,7 +410,7 @@ MODAL EDIT CUSTOMER
 
             <!-- ADDRESS INPUT -->
             
-            <div class="form-group">
+            <!-- <div class="form-group">
               
               <div class="input-group">
               
@@ -360,11 +420,11 @@ MODAL EDIT CUSTOMER
 
               </div>
 
-            </div>
+            </div> -->
 
             <!-- BIRTH DATE INPUT -->
             
-            <div class="form-group">
+            <!-- <div class="form-group">
               
               <div class="input-group">
               
@@ -374,7 +434,7 @@ MODAL EDIT CUSTOMER
 
               </div>
 
-            </div>
+            </div> -->
   
           </div>
 

@@ -22,15 +22,18 @@ $(".tables").on("click", "tbody .btnEditCustomer", function(){
       
       	 $("#idCustomer").val(answer["id"]);
 	       $("#editCustomer").val(answer["name"]);
-	       $("#editIdDocument").val(answer["idDocument"]);
+	       $("#editinvoice_id").val(answer["invoice_id"]);
+	       $("#editvenue").val(answer["venue"]);
+	       $("#edittime").val(answer["time"]);
+	       $("#editside").val(answer["side"]);
 	       $("#editEmail").val(answer["email"]);
 	       $("#editPhone").val(answer["phone"]);
-	       $("#editAddress").val(answer["address"]);
-         $("#editBirthdate").val(answer["birthdate"]);
-	  }
-
-  	})
-
+        }
+        
+      })
+      
+      //  $("#editAddress").val(answer["address"]);
+      //  $("#editBirthdate").val(answer["birthdate"]);
 })
 
 /*=============================================

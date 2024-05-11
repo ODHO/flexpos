@@ -10,14 +10,17 @@ class ModelCustomers{
 	/* --LOG ON TO codeastro.com FOR MORE PROJECTS-- */
 	static public function mdlAddCustomer($table, $data){
 
-		$stmt = Connection::connect()->prepare("INSERT INTO $table(name, idDocument, email, phone, address, birthdate) VALUES (:name, :idDocument, :email, :phone, :address, :birthdate)");
+		$stmt = Connection::connect()->prepare("INSERT INTO $table(name, invoice_id, venue, time, side, email, phone) VALUES (:name, :invoice_id, :venue, :time, :side, :email, :phone)");
 
 		$stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		$stmt->bindParam(":idDocument", $data["idDocument"], PDO::PARAM_INT);
+		$stmt->bindParam(":invoice_id", $data["invoice_id"], PDO::PARAM_STR);
+		$stmt->bindParam(":venue", $data["venue"], PDO::PARAM_STR);
+		$stmt->bindParam(":time", $data["time"], PDO::PARAM_STR);
+		$stmt->bindParam(":side", $data["side"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $data["email"], PDO::PARAM_STR);
-		$stmt->bindParam(":phone", $data["phone"], PDO::PARAM_STR);
-		$stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
-		$stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
+		$stmt->bindParam(":phone", $data["phone"], PDO::PARAM_INT);
+		// $stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
+		// $stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -72,15 +75,18 @@ class ModelCustomers{
 
 	static public function mdlEditCustomer($table, $data){
 
-		$stmt = Connection::connect()->prepare("UPDATE $table SET name = :name, idDocument = :idDocument, email = :email, phone = :phone, address = :address, birthdate = :birthdate WHERE id = :id");
+		$stmt = Connection::connect()->prepare("UPDATE $table SET name = :name, invoice_id = :invoice_id, venue = :venue, time = :time, side = :side, email = :email, phone = :phone WHERE id = :id");
 
 		$stmt->bindParam(":id", $data["id"], PDO::PARAM_INT);
 		$stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		$stmt->bindParam(":idDocument", $data["idDocument"], PDO::PARAM_INT);
+		$stmt->bindParam(":invoice_id", $data["invoice_id"], PDO::PARAM_STR);
+		$stmt->bindParam(":venue", $data["venue"], PDO::PARAM_STR);
+		$stmt->bindParam(":time", $data["time"], PDO::PARAM_STR);
+		$stmt->bindParam(":side", $data["side"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $data["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":phone", $data["phone"], PDO::PARAM_STR);
-		$stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
-		$stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
+		// $stmt->bindParam(":address", $data["address"], PDO::PARAM_STR);
+		// $stmt->bindParam(":birthdate", $data["birthdate"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

@@ -135,7 +135,7 @@
             $_GET["route"] == 'users' ||
             $_GET["route"] == 'calendar' ||
             $_GET["route"] == 'categories' ||
-            $_GET["route"] == 'products' ||
+            $_GET["route"] == 'services' ||
             $_GET["route"] == 'customers' ||
             $_GET["route"] == 'sales' ||
             $_GET["route"] == 'create-sale' ||
